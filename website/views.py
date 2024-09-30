@@ -5,15 +5,20 @@ def home_view(request):
     return render(request,'website/index.html')
 
 
-def contact_view():
-    pass
+def contact_view(request):
+    return render(request,'website/contact.html')
 
 
-def about_view():
-    pass
+def about_view(request):
+    return render(request,'website/about.html')
 
 
 
 
-def licenses_view():
-    pass
+def project_view(request):
+    return render(request,'website/project.html')
+
+
+
+def service_view(request):
+    return render(request,'website/service.html')

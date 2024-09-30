@@ -2,10 +2,11 @@ from django.shortcuts import render
 
 # Create your views here.
 def blog_view(request):
-    pass
+    return render(request,'blog/blog-grid.html')
 
 
 def blog_single(request,pk):
-    pass
+    return render(request,'blog/blog-single.html')
+    
     
     
