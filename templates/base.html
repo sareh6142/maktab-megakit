@@ -54,8 +54,8 @@
 	</div>
 	<nav class="navbar navbar-expand-lg  py-4" id="navbar">
 		<div class="container">
-		  <a class="navbar-brand" href="index.html">
-		  	Mega<span>kit.</span>
+		  <a class="navbar-brand" href="{% url 'website:home'%}">
+		  	Sareh Yazdani<span> Resume</span>
 		  </a>
 
 		  <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
@@ -68,7 +68,7 @@
 				<a class="nav-link" href="{% url 'website:home'%}">Home <span class="sr-only">(current)</span></a>
 			  </li>
 			  <li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="{% url 'website:about'%}" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+					<a class="nav-link" href="{% url 'website:about'%}" >About</a>
 					
 			  </li>
 			   <li class="nav-item"><a class="nav-link" href="{% url 'website:service'%}">Services</a></li>
@@ -82,11 +82,11 @@
 						<li><a class="dropdown-item" href="#">Blog Single</a></li>
 					</ul>
 			  </li>
-			   <li class="nav-item"><a class="nav-link" href="website:contact">Contact</a></li>
+			  <li class="nav-item"><a class="nav-link" href="{% url 'website:contact'%}">Contact</a></li>
 			</ul>
 
 			<form class="form-lg-inline my-2 my-md-0 ml-lg-4 text-center">
-			  <a href="contact.html" class="btn btn-solid-border btn-round-full">Get a Quote</a>
+			  <a href="{% url 'website:contact'%}" class="btn btn-solid-border btn-round-full">Get a Quote</a>
 			</form>
 		  </div>
 		</div>
@@ -183,7 +183,7 @@
 
     
     <!-- Main jQuery -->
-    <script src="{% static 'plugins/jquery/jquery.js' %}'  %}"></script>
+    <script src="{% static 'plugins/jquery/jquery.js' %}"></script>
     <script src="{% static 'js/contact.js' %}"></script>
     <!-- Bootstrap 4.3.1 -->
     <script src="{% static 'plugins/bootstrap/js/popper.js' %}"></script>
