@@ -1,0 +1,20 @@
+{% load static %}
+<div class="sidebar-widget search card p-4 mb-3 border-0">
+    <form  method="Get" action='{% url 'blog:search' %}' class="search-form">
+    <p><input type="text" class="form-control" placeholder="search" name="s"></p>
+    <button type="submit" class="btn btn-danger btn-lg btn-block">search</button>
+
+
+    </form>
+    
+</div>
+
+
+
+<!--<div class="single-sidebar-widget search-widget">
+    <form class="search-form" action="{% url 'blog:search' %}"  method="get">
+        <input placeholder="Search Posts" name="s" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search Posts'" >
+        <button type="submit"><i class="fa fa-search"></i></button>
+        <a type='submit' href="{% url 'blog:search' %}" class="btn btn-mian btn-small d-block mt-2" >search</a>
+    </form>
+</div>-->

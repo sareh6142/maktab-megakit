@@ -1,0 +1,19 @@
+{%load static%}
+
+<div class=class="sidebar-widget bg-white rounded tags p-4 mb-3">
+    <h4 class="category-title">Post Catgories</h4>
+    <ul class="cat-list">
+        {% for name,count in categories.items %}
+        <li>
+            <a href="{% url 'blog:category' name%}" class="d-flex justify-content-between">
+               
+                <p>{{name}}</p>
+
+                <p>{{count}}</p>
+                
+            </a>
+        </li>
+        {% endfor %}
+       														
+    </ul>
+</div>
