@@ -67,3 +67,9 @@ def blog_search(request):
             posts = posts.filter(content__contains=s)
     context = {'posts':posts}
     return render(request,'blog/blog-grid.html',context)  
+
+
+def customhandler404(request):
+    response = render(request, '404_page.html',)
+    response.status_code = 404
+    return response
