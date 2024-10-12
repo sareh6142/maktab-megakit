@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.urls import reverse
-#from taggit.managers import TaggableManager
+from taggit.managers import TaggableManager
 
 
 
@@ -17,7 +17,7 @@ class Post(models.Model):
     content = models.TextField()
     image = models.ImageField(upload_to='blog/')
     author= models.ForeignKey(User,on_delete=models.SET_NULL,null=True)
-    #tag = TaggableManager()
+    tag = TaggableManager()
     login_require =models.BooleanField(default=False)
     category = models.ManyToManyField(Category)
     counted_views = models.IntegerField(default=0)

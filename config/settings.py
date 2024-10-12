@@ -26,22 +26,38 @@ SECRET_KEY = 'django-insecure-_$8l0u11l6515yl6w+o==gwrk(6l#auc&3^69)frw*nfl-p)t+
 DEBUG = True
 
 ALLOWED_HOSTS = []
+ROBOTS_USE_HOST = False
+ROBOTS_USE_SITEMAP = False
+
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'multi-catcha-admin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
+    'django.contrib.humanize',
+    'django_extensions',
+    'django.contrib.sites',
+    'django.contrib.sitemaps',
+    'robots',
+    'debug_toolbar',
+    'taggit',
     'website',
     'blog',
+    'captcha',
     
 ]
+MULTI_CAPTCHA_ADMIN ={
+
+'engine':'simple-captcha',
+
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -51,6 +67,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
+
 ]
 
 ROOT_URLCONF = 'config.urls'
@@ -133,3 +151,8 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+SITE_ID = 2
+INTERNAL_IPS = [
+    "127.0.0.1",
+]

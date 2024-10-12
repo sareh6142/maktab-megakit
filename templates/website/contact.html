@@ -51,6 +51,11 @@
                     <div class="form-group-2 mb-4">
                         <textarea name="message" class="form-control" rows="4" placeholder="Your Message"></textarea>
                     </div>
+                    <div class='pb-3'>
+                    {{form.captcha}}
+                    </div>
+
+
                     <button class="btn btn-main" name="submit" type="submit">Send Message</button>
                 </form>
                 {% if messages %}
