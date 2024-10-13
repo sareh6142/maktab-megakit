@@ -1,5 +1,6 @@
 {% extends 'base.html'%}
 {% load static %}
+{% load blog_tags %}
 
 {% block content %}
 
@@ -38,7 +39,7 @@
 						<a href='{% url "blog:category"  cat_name=cat.name %}'>{{cat.name}}</a>{% if not forloop.last%},{% endif %}
 					{% endfor %}
 					</span><br>
-					<span class="text-muted text-capitalize mr-3"><i class="ti-comment mr-2"></i>5 Comments</span>
+					<span class="text-muted text-capitalize mr-3"><i class="ti-comment mr-2"></i>{% comments_count post.id %} Comments</span>
 					<span class="text-black text-capitalize mr-3"><i class="ti-time mr-1"></i> {{post.published_date|date:'d M Y'}}</span><br>
 					<span class="text-black text-capitalize mr-3"><i class="ti-eye mr-1"></i> {{post.counted_views}}views</span>
 					<span class="text-black text-capitalize mr-3"><i class="ti-write mr-1"></i> <a href='{% url "blog:author" author_username=post.author.username %}'>{{post.author.get_full_name}}</a></span>

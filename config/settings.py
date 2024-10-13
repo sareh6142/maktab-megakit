@@ -34,7 +34,7 @@ ROBOTS_USE_SITEMAP = False
 # Application definition
 
 INSTALLED_APPS = [
-    'multi-catcha-admin',
+    'multi_captcha_admin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
