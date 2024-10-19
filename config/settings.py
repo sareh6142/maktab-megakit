@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'website',
     'blog',
     'captcha',
+    'accounts',
     
 ]
 MULTI_CAPTCHA_ADMIN ={
@@ -156,3 +157,10 @@ SITE_ID = 2
 INTERNAL_IPS = [
     "127.0.0.1",
 ]
+
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'travelmaktab51@gmail.com'
+EMAIL_HOST_PASSWORD = 'ssxz ehxb rqgz xtbc'
