@@ -57,7 +57,7 @@ INSTALLED_APPS = [
     'blog',
     'captcha',
     'accounts',
-    'django_underconstruction',
+    
     "compressor",
     
 ]
@@ -76,12 +76,12 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     "debug_toolbar.middleware.DebugToolbarMiddleware",
-    'django_underconstruction.middleware.UnderConstructionMiddleware',
+    #'django_underconstruction.middleware.UnderConstructionMiddleware',
     'config.middleware.MaintenanceModeMiddleware',
 
 
 ]
-UNDER_CONSTRUCTION = False
+
 ROOT_URLCONF = 'config.urls'
 
 TEMPLATES = [
