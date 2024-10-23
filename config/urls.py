@@ -24,6 +24,7 @@ from website.sitemaps import StaticViewSitemap
 from blog.sitemaps import BlogSitemap
 from debug_toolbar.toolbar import debug_toolbar_urls
 from django.contrib.auth import views as authViews
+from.views import maintenance
 
 
 
@@ -36,6 +37,8 @@ sitemaps = {
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('website.urls')),
+    path('maintenance/', maintenance, name='maintenance'),
+
     path('blog/',include('blog.urls')),
     path('reset_password/',authViews.PasswordResetView.as_view(),name= 'reset_password'),
     path('reset_password_sent/',authViews.PasswordResetDoneView.as_view(),name='password_reset_done'),

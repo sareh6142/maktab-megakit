@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -24,7 +25,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 ROBOTS_USE_HOST = False
 ROBOTS_USE_SITEMAP = False
 
+MAINTENANCE_MODE = 1
+MAINTENANCE_BYPASS_QUERY = os.environ.get("MAINTENANCE_BYPASS_QUERY")
 
+COMPRESS_ENABLED = True
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    # other finders..
+    'compressor.finders.CompressorFinder',
+)
 
 # Application definition
 
@@ -47,6 +57,8 @@ INSTALLED_APPS = [
     'blog',
     'captcha',
     'accounts',
+    'django_underconstruction',
+    "compressor",
     
 ]
 MULTI_CAPTCHA_ADMIN ={
@@ -64,9 +76,12 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     "debug_toolbar.middleware.DebugToolbarMiddleware",
+    'django_underconstruction.middleware.UnderConstructionMiddleware',
+    'config.middleware.MaintenanceModeMiddleware',
+
 
 ]
-
+UNDER_CONSTRUCTION = False
 ROOT_URLCONF = 'config.urls'
 
 TEMPLATES = [
